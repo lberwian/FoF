@@ -10,6 +10,8 @@ Arquivo: V000_part_cut / Raio = 3/ Nº elementos = 5000 / Execuções = 10 / Esc
  8 - Total runtime: 0:00:00:0.119843 |
  9 - Total runtime: 0:00:00:0.119309 |
  10 - Total runtime: 0:00:00:0.123202 |
+
+```<code>
 processor	: 0
 vendor_id	: GenuineIntel
 cpu family	: 6
