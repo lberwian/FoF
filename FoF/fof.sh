@@ -23,7 +23,7 @@ done
 
 
 echo "Arquivo: $arc / Raio = $R/ Nº elementos = $E / Execuções = $N / Escrita habilitado (S/N) = $save |" > $file
-echo "-----------------------------------------------------------------------------------" >> $file
+echo "-------------------------------------------------------------------------------------------" 
 
 
 a=0
@@ -54,4 +54,4 @@ LANG=C	printf " $(($a+1)) - Total runtime: %d:%02d:%02d:%02f |\n"  $dd $dh $dm $
 
 done
 
-lscpu >> time.md
+lscpu >> $file
