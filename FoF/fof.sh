@@ -1,5 +1,5 @@
 #!/bin/bash
-myprog=~/fof/FoF/FoF
+myprog=~/FoF/FoF
 echo "Por favor insira o número de execuções: "
 read -p "Número de execuções para o teste de desempenho " N 
 read -p "Arquivo de entrada " arc 
@@ -12,8 +12,18 @@ else
 	echo "Isso nao"
 	save="N"
 fi
-echo "Arquivo: $arc / Raio = $R/ Nº elementos = $E / Execuções = $N / Escrita habilitado (S/N) = $save |" > time.md 
-echo "-----------------------------------------------------------------------------------" >> time.md
+file="time.md"
+count=0
+while [ -f "$file" ];
+do
+	count=$((count+1))	
+	file="time_$count.md"
+done
+
+
+
+echo "Arquivo: $arc / Raio = $R/ Nº elementos = $E / Execuções = $N / Escrita habilitado (S/N) = $save |" > $file
+echo "-----------------------------------------------------------------------------------" >> $file
 
 
 a=0
@@ -33,11 +43,10 @@ do
 	dt3=$(echo "$dt2-3600*$dh" | bc)
 	dm=$(echo "$dt3/60" | bc)
 	ds=$(echo "$dt3-60*$dm" | bc) 
-LANG=C	printf " $(($a+1)) - Total runtime: %d:%02d:%02d:%02f |\n"  $dd $dh $dm $ds >>time.md
+LANG=C	printf " $(($a+1)) - Total runtime: %d:%02d:%02d:%02f |\n"  $dd $dh $dm $ds >> $file
   # echo "$dm:$ds |" >> time.md
 	a=$(($a+1))
 
 done
 
 lscpu >> time.md
-
