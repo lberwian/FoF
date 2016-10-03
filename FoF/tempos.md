@@ -1,1 +1,1 @@
-N=500 Raio=3 Arquivo: V000_part_cut|
+N=500 Raio=1 Arquivo: V000_part_cut|

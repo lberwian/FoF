@@ -200,11 +200,11 @@ int main(int argc, char **argv)
   LeDados(Arg1,limit);
   Friends(raio,read);
   LimpaMemoria();
-  std::ofstream entrada("tempos.md");
+ /* std::ofstream entrada("tempos.md");
   std::string a;
   entrada << "N="<< argv[2]<< " Raio="<<argv[3]<<" Arquivo: " <<argv[1]<< "|" <<std::endl;
 
-  
+  */
   printf(" Terminou \n");
  
   return 0;
