@@ -23,6 +23,7 @@ Arquivo: V000_part_cut / Raio = 1/ Nº elementos = 5000 / Execuções = 20 / Esc
 Menor - Total Runtime: 0:0:0:0.138072|
 Maior - Total Runtime: 0:0:0:0.169837|
 Média - Total Runtime: 0:0:0:0.143256|
+'''<code>
 Arquitetura:           x86_64
 Modo(s) operacional da CPU:32-bit, 64-bit
 Byte Order:            Little Endian
