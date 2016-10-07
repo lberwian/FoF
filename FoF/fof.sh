@@ -14,11 +14,13 @@ else
 	save="N"
 fi
 file="time.md"
+file1="time_ns.md"
 count=0
 while [ -f "$file" ];
 do
 	count=$((count+1))	
 	file="time_$count.md"
+	file1="time_ns_$count.md"
 done
 
 
@@ -32,29 +34,17 @@ resmax=0
 resmin=0
 while [ $a -ne $N ];
 do
-    
-	 
+    	 
 	res1=$(date +%s.%N)
-        $myprog "$arc" "$E" "$R" "$save"
+    $myprog "$arc" "$E" "$R" "$save"
 	res2=$(date +%s.%N)
-		
-       	dt=$(echo "$res2 - $res1" | bc)
-
-	if [ "$resmin" -e 0 -o "$resmin" -gt "$dt" ]; then
-		resmin=$dt 
-	fi
-	
-	if [ $dt > $resmax ]; then
-		resmax=$dt
-        fi
-		
-	$prog "$dt" $file "$a"
-	
+	dt=$(echo "$res2 - $res1" | bc)
+	echo "$dt" >> $file1
+	$prog "$dt" $file "$a - " "t"
 	a=$(($a+1))
 
 done
-$prog "$resmin" $file "Tempo minimo - "
-$prog "$resmax" $file "Tempo maximo - "
 
+ $prog "0" "$file" "0" "c" "$file1"
 
 lscpu >> $file
