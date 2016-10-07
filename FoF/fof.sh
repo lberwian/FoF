@@ -1,5 +1,6 @@
 #!/bin/bash
 myprog=~/FoF/FoF/FoF
+prog=~/FoF/FoF/calc
 echo "Por favor insira o número de execuções: "
 read -p "Número de execuções para o teste de desempenho " N 
 read -p "Arquivo de entrada " arc 
@@ -23,11 +24,12 @@ done
 
 
 echo "Arquivo: $arc / Raio = $R/ Nº elementos = $E / Execuções = $N / Escrita habilitado (S/N) = $save |" > $file
-echo "-------------------------------------------------------------------------------------------" 
+echo "-------------------------------------------------------------------------------------------" >> $file
 
 
 a=0
-resmax=0;
+resmax=0
+resmin=0
 while [ $a -ne $N ];
 do
     
@@ -35,23 +37,24 @@ do
 	res1=$(date +%s.%N)
         $myprog "$arc" "$E" "$R" "$save"
 	res2=$(date +%s.%N)
-	
-	
+		
        	dt=$(echo "$res2 - $res1" | bc)
-	if [ $dt > $resmax ]; then
-	resmax=$dt
-        fi
-	dd=$(echo "$dt/86400" | bc)
-	dt2=$(echo "$dt-86400*$dd" | bc)
-	dh=$(echo "$dt2/3600" | bc)
-	dt3=$(echo "$dt2-3600*$dh" | bc)
-	dm=$(echo "$dt3/60" | bc)
-	ds=$(echo "$dt3-60*$dm" | bc) 
+
+	if [ "$resmin" -e 0 -o "$resmin" -gt "$dt" ]; then
+		resmin=$dt 
+	fi
 	
-LANG=C	printf " $(($a+1)) - Total runtime: %d:%02d:%02d:%02f |\n"  $dd $dh $dm $ds >> $file
-  # echo "$dm:$ds |" >> time.md
+	if [ $dt > $resmax ]; then
+		resmax=$dt
+        fi
+		
+	$prog "$dt" $file "$a"
+	
 	a=$(($a+1))
 
 done
+$prog "$resmin" $file "Tempo minimo - "
+$prog "$resmax" $file "Tempo maximo - "
+
 
 lscpu >> $file

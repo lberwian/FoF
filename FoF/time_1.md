@@ -1,12 +1,34 @@
-Arquivo: V000_part_Cut / Raio = 5/ Nº elementos = 10000 / Execuções = 10 / Escrita habilitado (S/N) = S |
------------------------------------------------------------------------------------
- 1 - Total runtime: 0:00:00:0.273697 |
- 2 - Total runtime: 0:00:00:0.263707 |
- 3 - Total runtime: 0:00:00:0.265019 |
- 4 - Total runtime: 0:00:00:0.263743 |
- 5 - Total runtime: 0:00:00:0.264705 |
- 6 - Total runtime: 0:00:00:0.265279 |
- 7 - Total runtime: 0:00:00:0.265574 |
- 8 - Total runtime: 0:00:00:0.266645 |
- 9 - Total runtime: 0:00:00:0.261165 |
- 10 - Total runtime: 0:00:00:0.264534 |
+Arquivo: V000_part_cut / Raio = 1/ Nº elementos = 5000 / Execuções = 10 / Escrita habilitado (S/N) = N |
+Total Runtime: 0:0:0:0.475465|
+Total Runtime: 0:0:0:0.474425|
+Total Runtime: 0:0:0:0.480375|
+Total Runtime: 0:0:0:0.475295|
+Total Runtime: 0:0:0:0.473844|
+Total Runtime: 0:0:0:0.477872|
+Total Runtime: 0:0:0:0.472767|
+Total Runtime: 0:0:0:0.474157|
+Total Runtime: 0:0:0:0.472624|
+Total Runtime: 0:0:0:0.475803|
+Arquitetura:           x86_64
+Modo(s) operacional da CPU:32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                2
+On-line CPU(s) list:   0,1
+Thread(s) per núcleo  1
+Núcleo(s) por soquete:2
+Soquete(s):            1
+Nó(s) de NUMA:        1
+ID de fornecedor:      GenuineIntel
+Família da CPU:       6
+Modelo:                23
+Model name:            Pentium(R) Dual-Core CPU       T4300  @ 2.10GHz
+Step:                  10
+CPU MHz:               1600.000
+CPU max MHz:           2100,0000
+CPU min MHz:           1200,0000
+BogoMIPS:              4189.60
+cache de L1d:          32K
+cache de L1i:          32K
+cache de L2:           1024K
+NUMA node0 CPU(s):     0,1
+Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx lm constant_tsc arch_perfmon pebs bts rep_good nopl aperfmperf pni dtes64 monitor ds_cpl est tm2 ssse3 cx16 xtpr pdcm xsave lahf_lm dtherm

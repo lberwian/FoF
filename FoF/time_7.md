@@ -1,14 +1,17 @@
-Arquivo: V000_part_cut / Raio = 1/ Nº elementos = 500 / Execuções = 10 / Escrita habilitado (S/N) = N |
- 1 - Total runtime: 0:00:00:0.014711 |
- 2 - Total runtime: 0:00:00:0.013316 |
- 3 - Total runtime: 0:00:00:0.013096 |
- 4 - Total runtime: 0:00:00:0.013400 |
- 5 - Total runtime: 0:00:00:0.014568 |
- 6 - Total runtime: 0:00:00:0.011587 |
- 7 - Total runtime: 0:00:00:0.011694 |
- 8 - Total runtime: 0:00:00:0.013497 |
- 9 - Total runtime: 0:00:00:0.012158 |
- 10 - Total runtime: 0:00:00:0.010905 |
+Arquivo: V000_part_cut / Raio = 1/ Nº elementos = 5000 / Execuções = 10 / Escrita habilitado (S/N) = N |
+-------------------------------------------------------------------------------------------
+0Total Runtime: 0:0:0:0.487133|
+1Total Runtime: 0:0:0:0.481289|
+2Total Runtime: 0:0:0:0.476126|
+3Total Runtime: 0:0:0:0.477021|
+4Total Runtime: 0:0:0:0.475616|
+5Total Runtime: 0:0:0:0.479931|
+6Total Runtime: 0:0:0:0.480378|
+7Total Runtime: 0:0:0:0.477696|
+8Total Runtime: 0:0:0:0.476067|
+9Total Runtime: 0:0:0:0.47758|
+Tempo minimo - Total Runtime: 0:0:0:0.47758|
+Tempo maximo - Total Runtime: 0:0:0:0.47758|
 Arquitetura:           x86_64
 Modo(s) operacional da CPU:32-bit, 64-bit
 Byte Order:            Little Endian
@@ -23,10 +26,10 @@ Família da CPU:       6
 Modelo:                23
 Model name:            Pentium(R) Dual-Core CPU       T4300  @ 2.10GHz
 Step:                  10
-CPU MHz:               1600.000
+CPU MHz:               2100.000
 CPU max MHz:           2100,0000
 CPU min MHz:           1200,0000
-BogoMIPS:              4189.69
+BogoMIPS:              4189.60
 cache de L1d:          32K
 cache de L1i:          32K
 cache de L2:           1024K
