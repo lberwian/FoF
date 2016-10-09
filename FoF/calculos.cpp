@@ -16,13 +16,13 @@ void tempo_(float tempo,std::ofstream &out,char *def){
 	tempo = tempo-3600*horas;
 	int minutos = tempo/60;
 	double segundos = tempo-60*minutos;
-		
+	
  	out << def << "Total Runtime: "<< dias << ":" << horas  << ":" << minutos  << ":"<< segundos  << "|"<< std::endl;
 
 
 }
 
-void stats (std::ofstream &out,std::ifstream &in){
+void stats (std::ofstream &out,std::ifstream &in,char *def){
 
 
 	std::string str;
@@ -36,7 +36,7 @@ void stats (std::ofstream &out,std::ifstream &in){
     {
 	        getline(in,str); // Saves the line in STRING.
 			float a = atof(str.c_str());
-			if(a==0) break;
+			if (a==0) break;
 			if (maior < a) maior = a;
 			if (menor == 0 || menor > a) menor=a;
 			
@@ -56,10 +56,20 @@ void stats (std::ofstream &out,std::ifstream &in){
 	
 	
 	
-	tempo_(menor,out,"Menor - ");
-	tempo_(maior,out,"Maior - ");
-	tempo_(soma,out,"Média - ");
-	out << "```<code>" << std::endl;
+	
+	if(def[0] == 'i'){
+	
+		tempo_(menor,out,"Menor/interna -");
+		tempo_(maior,out,"Maior/interna - ");
+		tempo_(soma,out,"Média/interna - ");
+			out << "```<code>" << std::endl;
+	}
+
+	else{
+		tempo_(menor,out,"Menor - ");
+		tempo_(maior,out,"Maior - ");
+		tempo_(soma,out,"Média - ");
+	}
 	return;
 
 }
@@ -80,7 +90,7 @@ int main(int argc, char **argv){
 		case 't':
 			tempo_(tempo,out,what); break; 
 		case 'c':
-			stats(out,in); break;
+			stats(out,in,what); break;
 
 	}
 

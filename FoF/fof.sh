@@ -1,6 +1,7 @@
 #!/bin/bash
 myprog=~/FoF/FoF/FoF
 prog=~/FoF/FoF/calc
+
 echo "Por favor insira o número de execuções: "
 read -p "Número de execuções para o teste de desempenho " N 
 read -p "Arquivo de entrada " arc 
@@ -15,6 +16,7 @@ else
 fi
 file="time.md"
 file1="time_ns.md"
+file2="timein_ns.md"
 count=0
 while [ -f "$file" ];
 do
@@ -30,8 +32,7 @@ echo "--------------------------------------------------------------------------
 
 
 a=0
-resmax=0
-resmin=0
+
 while [ $a -ne $N ];
 do
     	 
@@ -46,5 +47,5 @@ do
 done
 
  $prog "0" "$file" "0" "c" "$file1"
-
+$prog "0" "$file" "i" "c" "$file2"
 lscpu >> $file

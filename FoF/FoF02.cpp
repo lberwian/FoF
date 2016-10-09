@@ -13,12 +13,16 @@ Autor: Renata S. Rocha Ruiz
 #include <math.h>
 #include <time.h>
 #include <fstream>
+#include <chrono>
 
 //---------------------------------------------------------------------------
-clock_t tempo_inicial, tempo_final;
+//2clock_t tempo_inicial, tempo_final;
 int  *igru, *iden, N;
 float  *x, *y, *z, *v1, *v2, *v3;
-  
+std::chrono::time_point<std::chrono::system_clock> start;
+  // última vez que uma movimentação foi feita
+ std::chrono::time_point<std::chrono::system_clock> end;
+
 
 //---------------------------------------------------------------------------
 /********************* Lendo o arquivo de dados de entrada *****************/
@@ -34,7 +38,8 @@ bool LeDados(char *fn,int limit)
   if(N>limit)
 	N=limit;
  	printf("%d\n",N);
-  tempo_inicial = clock();
+ // tempo_inicial = clock();
+	 start = std::chrono::system_clock::now();
 //********* alocando memória************//
   iden  = new int [N+1];  // indentificador da partícula
   igru  = new int [N+1];  // índice do grupo
@@ -100,10 +105,21 @@ void Friends(float rperc, int read)
        }
        
      }
-  tempo_final = clock();
-  double tempo = (tempo_final-tempo_inicial)/(double)CLOCKS_PER_SEC;
-  tempo_final = tempo;
+ // tempo_final = clock();
+	 end = std::chrono::system_clock::now();
+ // double tempo = (tempo_final-tempo_inicial)/(double)CLOCKS_PER_SEC;
+  std::chrono::duration<double, std::ratio<1>> tempo = end-start;
+	
+  //auto tempo=	 std::chrono::duration_cast<std::chrono::duration<float>>(temp);
+	
         printf("%f\n",tempo);
+  char cmdLine[1000];
+  char a[] = {"timein.md"};
+  char b[100000];
+  sprintf(b,"%.6f",tempo);
+  sprintf(cmdLine,"~/FoF/FoF/internal.sh %f %d %f",tempo,N,rperc);
+  system(cmdLine);
+
   if(read != 'S' && read != 's')
 	return;
   
