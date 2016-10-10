@@ -23,6 +23,7 @@ do
 	count=$((count+1))	
 	file="time_$count.md"
 	file1="time_ns_$count.md"
+	file2="timein_ns_$count.md"
 done
 
 
