@@ -20,8 +20,8 @@ Autor: Renata S. Rocha Ruiz
 int  *igru, *iden, N;
 float  *x, *y, *z, *v1, *v2, *v3;
 std::chrono::time_point<std::chrono::system_clock> start;
-  // última vez que uma movimentação foi feita
- std::chrono::time_point<std::chrono::system_clock> end;
+std::chrono::time_point<std::chrono::system_clock> end;
+std::chrono::duration<double, std::ratio<1>> tempo;
 
 
 //---------------------------------------------------------------------------
@@ -39,7 +39,7 @@ bool LeDados(char *fn,int limit)
 	N=limit;
  	printf("%d\n",N);
  // tempo_inicial = clock();
-	 start = std::chrono::system_clock::now();
+
 //********* alocando memória************//
   iden  = new int [N+1];  // indentificador da partícula
   igru  = new int [N+1];  // índice do grupo
@@ -105,20 +105,10 @@ void Friends(float rperc, int read)
        }
        
      }
- // tempo_final = clock();
-	 end = std::chrono::system_clock::now();
- // double tempo = (tempo_final-tempo_inicial)/(double)CLOCKS_PER_SEC;
-  std::chrono::duration<double, std::ratio<1>> tempo = end-start;
-	
-  //auto tempo=	 std::chrono::duration_cast<std::chrono::duration<float>>(temp);
-	
-        printf("%f\n",tempo);
-  char cmdLine[1000];
-  char a[] = {"timein.md"};
-  char b[100000];
-  sprintf(b,"%.6f",tempo);
-  sprintf(cmdLine,"~/FoF/FoF/internal.sh %f %d %f",tempo,N,rperc);
-  system(cmdLine);
+ 																								 // tempo_final = clock();
+  							  	//auto tempo=	 std::chrono::duration_cast<std::chrono::duration<float>>(temp);
+	       
+
 
   if(read != 'S' && read != 's')
 	return;
@@ -128,7 +118,7 @@ void Friends(float rperc, int read)
   
   
   char str1[10],str2[10];
-
+	
   FILE *fp;
   
   int num;
@@ -193,34 +183,37 @@ void LimpaMemoria(void)
 /***************************************************************************/
 //---------------------------------------------------------------------------
 
-int main(int argc, char **argv)
-  {
-  float  local_v[100] ;
- // char *Arg1;
-  
+int main(int argc, char **argv){
 
-  if(argc < 4 || argc > 5 )
-    {
+  start = std::chrono::system_clock::now();
+  float  local_v[100] ;
+
+  if(argc < 4 || argc > 6 ){
+
     puts( "MODO DE USO: ./FoF 'arquivo' 'limite de dados de entrada' 'Raio de Percolação' 'Escrita dos Resultados (S/s)' \n Ex: ./FoF V000_part_cut 10 2 S ");
     getchar();
     exit(1);
-    }
+  }
+
   puts ("Iniciando...");
+
   float raio = atof(argv[3]);
   int limit=atoi(argv[2]);
   char *Arg1 = argv[1];
   int read = argv[4][0];
-  
+  int internal = argv[5][0];
  
-
   LeDados(Arg1,limit);
   Friends(raio,read);
   LimpaMemoria();
- /* std::ofstream entrada("tempos.md");
-  std::string a;
-  entrada << "N="<< argv[2]<< " Raio="<<argv[3]<<" Arquivo: " <<argv[1]<< "|" <<std::endl;
-
-  */
+	
+  end = std::chrono::system_clock::now();													 // double tempo = (tempo_final-tempo_inicial)/(double)CLOCKS_PER_SEC;
+  tempo = end-start;
+  char cmdLine[1000];
+  sprintf(cmdLine,"~/FoF/FoF/internal.sh %f %d %f",tempo,N,raio);
+  if(internal == 'S' || internal == 's')	
+	  system(cmdLine);
+  
   printf(" Terminou \n");
  
   return 0;
