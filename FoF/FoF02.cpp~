@@ -209,9 +209,15 @@ int main(int argc, char **argv){
 	
   end = std::chrono::system_clock::now();													 // double tempo = (tempo_final-tempo_inicial)/(double)CLOCKS_PER_SEC;
   tempo = end-start;
-
+  //std::ofstream time;
+	//time.open(arquivo, std::ios::app);
   printf("%f\n",tempo);
- 
+  //char cmdLine[1000];
+ // sprintf(cmdLine,"~/FoF/FoF/internal.sh %f %d %f",tempo,N,raio);
+  //if(internal == 'S' || internal == 's')	
+	//  system(cmdLine);
+  
+  //printf(" Terminou \n");
  
   return 0;
   }
