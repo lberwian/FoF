@@ -1,0 +1,311 @@
+Iniciando...
+
+ Maximos e Minimos:
+	 x_max : 14.860000 	 y_max: 14.700000 	 z_max: 1.000000 
+	 x_min : 0.700000 	 y_min: 0.500000 	 z_min: 1.000000 
+
+ Entrada : 50 dados
+--------------------------------------------------
+		SERIAL
+----------------------------------
+nlogn:
+Raio utilizado: 1.70	tamanho da entrada : 50
+LIMITES Segmento: 
+	 MAX 		 MIN 
+X:	 14.860000	 0.700000
+Y:	 14.700000	 0.500000
+Z:	 1.000000	 1.000000
+
+primeiro no: id 4
+
+
+
+i:1 , index: 1 e  id no : 14
+
+i:2 , index: 2 e  id no : 18
+
+i:3 , index: 3 e  id no : 19
+
+i:4 , index: 4 e  id no : 20
+
+i:5 , index: 5 e  id no : 123
+
+i:6 , index: 6 e  id no : 143
+
+i:7 , index: 7 e  id no : 142
+
+i:8 , index: 8 e  id no : 141
+
+i:9 , index: 9 e  id no : 145
+
+i:10 , index: 10 e  id no : 146
+
+i:11 , index: 11 e  id no : 147
+
+i:12 , index: 12 e  id no : 148
+
+i:13 , index: 13 e  id no : 149
+
+i:14 , index: 14 e  id no : 31
+
+i:15 , index: 15 e  id no : 41
+
+i:16 , index: 16 e  id no : 32
+
+i:17 , index: 17 e  id no : 42
+
+i:18 , index: 18 e  id no : 33
+
+-f	 novo tem igru: 2
+i:19 , index: 19 e  id no : 43
+
+i:20 , index: 20 e  id no : 34
+
+i:21 , index: 21 e  id no : 44
+
+i:22 , index: 22 e  id no : 35
+
+i:23 , index: 23 e  id no : 45
+
+i:24 , index: 24 e  id no : 36
+
+i:25 , index: 25 e  id no : 46
+
+-f	 novo tem igru: 2
+-f	 novo tem igru: 2
+i:26 , index: 26 e  id no : 37
+
+i:27 , index: 27 e  id no : 47
+
+i:28 , index: 28 e  id no : 38
+
+i:29 , index: 29 e  id no : 48
+
+i:30 , index: 30 e  id no : 39
+
+i:31 , index: 31 e  id no : 49
+
+i:32 , index: 32 e  id no : 30
+
+i:33 , index: 33 e  id no : 40
+
+i:34 , index: 34 e  id no : 50
+
+i:35 , index: 35 e  id no : 60
+
+i:36 , index: 36 e  id no : 51
+
+i:37 , index: 37 e  id no : 61
+
+i:38 , index: 38 e  id no : 52
+
+-f	 novo tem igru: 4
+-f	 novo tem igru: 4
+i:39 , index: 39 e  id no : 62
+
+-f	 novo tem igru: 4
+i:40 , index: 40 e  id no : 53
+
+i:41 , index: 41 e  id no : 63
+
+i:42 , index: 42 e  id no : 54
+
+i:43 , index: 43 e  id no : 64
+
+-f	 novo tem igru: 4
+-f	 novo tem igru: 4
+i:44 , index: 44 e  id no : 55
+
+-f	 novo tem igru: 4
+i:45 , index: 45 e  id no : 65
+
+i:46 , index: 46 e  id no : 56
+
+i:47 , index: 47 e  id no : 999
+
+-f	 novo tem igru: 1
+i:48 , index: 48 e  id no : 998
+
+i:49 , index: 49 e  id no : 997
+
+ size fronteira: 50
+	 id:4
+	 id:14
+	 id:18
+	 id:19
+	 id:20
+	 id:123
+	 id:143
+	 id:142
+	 id:141
+	 id:145
+	 id:146
+	 id:147
+	 id:148
+	 id:149
+	 id:31
+	 id:41
+	 id:32
+	 id:42
+	 id:33
+	 id:43
+	 id:34
+	 id:44
+	 id:35
+	 id:45
+	 id:36
+	 id:46
+	 id:37
+	 id:47
+	 id:38
+	 id:48
+	 id:39
+	 id:49
+	 id:30
+	 id:40
+	 id:50
+	 id:60
+	 id:51
+	 id:61
+	 id:52
+	 id:62
+	 id:53
+	 id:63
+	 id:54
+	 id:64
+	 id:55
+	 id:65
+	 id:56
+	 id:999
+	 id:998
+	 id:997
+ Numero de grupos : 5
+
+testando acesso a nó 4
+
+G:0 size : 41
+G:1 size : 0
+G:2 size : 9
+G:3 size : 0
+G:4 size : 0
+ Grupos com massa maior que 1 : 2
+ Grupo 0
+	 ID: 37548112
+	 ID: 37548576
+	 ID: 37551168
+	 ID: 37551728
+	 ID: 37552224
+	 ID: 37551680
+	 ID: 37553024
+	 ID: 37551216
+	 ID: 37553568
+	 ID: 37552560
+	 ID: 37554592
+	 ID: 37555264
+	 ID: 37555520
+	 ID: 37564784
+	 ID: 37565376
+	 ID: 37565936
+	 ID: 37566496
+	 ID: 37566800
+	 ID: 37566448
+	 ID: 37565984
+	 ID: 37561088
+	 ID: 37568448
+	 ID: 37569040
+	 ID: 37569296
+	 ID: 37568640
+	 ID: 37569968
+	 ID: 37570496
+	 ID: 37556048
+	 ID: 37556400
+	 ID: 37556960
+	 ID: 37557504
+	 ID: 37553664
+	 ID: 37557456
+	 ID: 37553712
+	 ID: 37558912
+	 ID: 37553616
+	 ID: 37558656
+	 ID: 37560048
+	 ID: 37560336
+	 ID: 37560784
+	 ID: 37554240
+ Grupo 1
+ Grupo 2
+	 ID: 37561040
+	 ID: 37561344
+	 ID: 37561904
+	 ID: 37562448
+	 ID: 37562752
+	 ID: 37562400
+	 ID: 37563696
+	 ID: 37564480
+	 ID: 37566544
+ Grupo 3
+ Grupo 4
+---------------LIMPANDO----------------
+G 0 size: 41
+G 1 size: 0
+G 1 size: 9
+G 2 size: 0
+G 2 size: 0
+Tempo total :    0.30000 (ms)
+
+-------------------IMPRIME GRUPOS-----------------
+ G 0 size: 41
+	 id : 4
+	 id : 14
+	 id : 18
+	 id : 19
+	 id : 20
+	 id : 123
+	 id : 143
+	 id : 142
+	 id : 141
+	 id : 145
+	 id : 146
+	 id : 147
+	 id : 148
+	 id : 50
+	 id : 60
+	 id : 51
+	 id : 61
+	 id : 52
+	 id : 62
+	 id : 53
+	 id : 63
+	 id : 54
+	 id : 64
+	 id : 55
+	 id : 65
+	 id : 56
+	 id : 999
+	 id : 149
+	 id : 31
+	 id : 41
+	 id : 32
+	 id : 42
+	 id : 33
+	 id : 43
+	 id : 34
+	 id : 44
+	 id : 35
+	 id : 45
+	 id : 36
+	 id : 46
+	 id : 998
+ G 1 size: 9
+	 id : 37
+	 id : 47
+	 id : 38
+	 id : 48
+	 id : 39
+	 id : 49
+	 id : 30
+	 id : 40
+	 id : 997
+Numero de grupos: 2
+Numero de grupos + 1 elemento: 2
+FIM EXECUCAO
+

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Arquivos de Cabeçalho"
+                   projectFiles="true">
+      <itemPath>Corpo.cpp</itemPath>
+      <itemPath>Corpo.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Arquivos de Código-Fonte"
+                   projectFiles="true">
+      <itemPath>No.cpp</itemPath>
+      <itemPath>No.h</itemPath>
+      <itemPath>Segmento.cpp</itemPath>
+      <itemPath>Segmento.h</itemPath>
+      <itemPath>Tupla.cpp</itemPath>
+      <itemPath>Tupla.h</itemPath>
+      <itemPath>common.h</itemPath>
+      <itemPath>grupo.cpp</itemPath>
+      <itemPath>grupo.h</itemPath>
+      <itemPath>main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Arquivos de Recurso"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Arquivos de Teste"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Arquivos Importantes"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <commandLine>-lopenmp</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>-fopenmp</commandLine>
+        </ccTool>
+      </compileType>
+      <item path="Corpo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Corpo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="No.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="No.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Segmento.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Segmento.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Tupla.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Tupla.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="common.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="grupo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="grupo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="Corpo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Corpo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="No.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="No.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Segmento.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Segmento.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Tupla.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Tupla.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="common.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="grupo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="grupo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
