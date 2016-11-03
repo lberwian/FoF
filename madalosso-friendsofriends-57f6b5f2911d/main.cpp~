@@ -18,6 +18,7 @@ using namespace std;
 #include <sys/time.h>
 #include <sstream>
 #include <chrono>
+#include <time.h>
 
 #include "No.h"
 #include "grupo.h"
@@ -31,17 +32,17 @@ using namespace std;
 #include <string>
 
 #define debug false
-#define paralelo true
-#define original false
+#define paralelo 1
+#define original 0
 
 
 int *igru, *iden, N;
 float *x, *y, *z, *v1, *v2, *v3;
 
 float max_x, min_x, max_y, min_y, max_z, min_z;
-std::chrono::time_point<std::chrono::system_clock> start;
-std::chrono::time_point<std::chrono::system_clock> end;
-std::chrono::duration<double, std::ratio<1>> tempo_cro;
+chrono::time_point<chrono::system_clock> start;
+chrono::time_point<chrono::system_clock> final;
+chrono::duration<double, ratio<1>> tempo_cro;
 timeval tStart, tEnd;
 timeval tempo_inicio, tempo_fim;
 
@@ -207,33 +208,34 @@ void Friends() {
     //            }
     //        }
 
-    /********************escrevendo arquivo de saida ************************/
-
-    //    char str1[10], str2[10];
-    //
-    //    FILE *fp;
-    //
-    //    int num;
-    //    char resultado;
-    //    num = sprintf(str2, "%.2lf", rperc);
-    //
-    //    strcpy(str1, "Grupos_RP");
-    //    strcat(str1, str2);
-    //
-    //    fp = fopen(str1, "w");
-    //
-    //    fprintf(fp, "%d %d \n", N, k);
-    //
-    //    for (i = 0; i < N; i++)
-    //        fprintf(fp, "%4d % 10d %4d % 10.6e % 10.6e % 10.6e % 10.6e % 10.6e % 10.6e \n", i, iden[i], igru[i], x[i], y[i], z[i],
-    //            v1[i], v2[i], v3[i]);
-    //
-    //    fclose(fp);
-    //
-    //    printf("Numero total de grupos: ");
-    //    printf("%d \n", k);
-    //
-    //    printf("Numero de nos: %d\n", N);
+    /********************escrevendo arquivo de 
+    ************************/
+#ifdef SAVE
+      char str1[10], str2[10];
+    
+        FILE *fp;
+    
+        int num;
+        char resultado;
+       num = sprintf(str2, "%.2lf", rperc);
+    
+       strcpy(str1, "Grupos_RP");
+        strcat(str1, str2);
+    
+       fp = fopen(str1, "w");
+    
+       fprintf(fp, "%d %d \n", N, k);
+    
+       for (i = 0; i < N; i++)
+          fprintf(fp, "%4d % 10d %4d % 10.6e % 10.6e % 10.6e % 10.6e % 10.6e % 10.6e \n", i, iden[i], igru[i], x[i], y[i], z[i],
+                v1[i], v2[i], v3[i]);
+    
+        fclose(fp);
+  #endif
+       printf("Numero total de grupos: ");
+       printf("%d \n", k);
+    
+       printf("Numero de nos: %d\n", N);
 
     /********* Calculando a quantidade de particulas por grupo ************/
     int nn, si, mult;
@@ -257,6 +259,7 @@ void Friends() {
     //    printf("Tempo de execução: %ld segundos e %ld microsegundos\n", tEnd.tv_sec - tStart.tv_sec, usec);
 
     delete Ngr;
+
 
 }
 
@@ -411,14 +414,14 @@ void DivideEntrada() {
     float meioZ = min_z + ((max_z - min_z) / 2);
     printf("\nMX: %f\nMY: %f\nMZ: %f", meioX, meioY, meioZ);
     int quadro;
-#if paralelo==true
+#if paralelo==1
 
 //#pragma omp parallel for
     for (int contador = 0; contador < N; contador++) {
         quadro = 0;
         if (x[contador] > meioX) {
             quadro += 1;
-        }
+        }                                                   
         if (y[contador] > meioY) {
             quadro += 2;
         }
@@ -457,20 +460,28 @@ main(int argc, char **argv) {
 
     puts("Iniciando...");
     Arg1 = argv[1];
-start = std::chrono::system_clock::now();
+start = chrono::system_clock::now();
     LeDados(Arg1);
+#if Range>0
+	if(Range<=N)
+		N=Range;
     printf("\n Entrada : %d dados", N);
+#endif
+#if Raio>0
+	raio=Raio;
     printf("\nraio = %f", raio);
-#if original ==true
+    
+#endif 
+#if original==1
     printf("\nOriginal Executando\n");
 #endif
-#if paralelo == true
+#if paralelo==1
     printf("\nOpenMP Executando\n");
 #endif
     //gettimeofday(&tempo_inicio, NULL);
 
-#if original == false
-    if (paralelo) {
+#if original==1
+    if (paralelo==1) {
         DivideEntrada();
         vector<string> logs[8];
         Segmento root[8];
@@ -787,21 +798,22 @@ start = std::chrono::system_clock::now();
         //        printf("\nNumero de corpos nos grupos: %d", cont3);
     }
 #endif
-#if original==true
+#if original==1
     Friends();
 #endif
     gettimeofday(&tempo_fim, NULL);
     tf = (double) tempo_fim.tv_usec + ((double) tempo_fim.tv_sec * (1000000.0));
     ti = (double) tempo_inicio.tv_usec + ((double) tempo_inicio.tv_sec * (1000000.0));
-    end = std::chrono::system_clock::now();													 
-    tempo_cro = end-start;
+    final = std::chrono::system_clock::now();		
+
+    tempo_cro = final-start;
     tempo = (tf - ti) / 1000;
-    printf("\nTempo total :    %.5f (ms)\n", tempo_cro);
-    
-#if original==true
+    printf("\nTempo total :    %.5f (ms)\n", tempo);
+    printf("\nFIM EXECUCAO\n\n");
+    printf("%f", tempo_cro);
+#if original==1
     LimpaMemoria();
 #endif
-    printf("\nFIM EXECUCAO\n\n");
-    printf("%.5f", tempo_cro);
+   
     return 0;
 }

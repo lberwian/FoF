@@ -4,40 +4,40 @@ Iniciando...
 	 x_max : 119.999847 	 y_max: 119.999847 	 z_max: 119.999962 
 	 x_min : 60.000324 	 y_min: 60.000439 	 z_min: 60.000095 
 
- Entrada : 1000 dados
+ Entrada : 25000 dados
 raio = 1.000000
 OpenMP Executando
-
+asdasd
 MX: 90.000084
 MY: 90.000145
 MZ: 90.000031
 
 Entrada dividida:
 Quadro 0
-	numero total corpos : 132
+	numero total corpos : 10961
 Quadro 1
 	numero total corpos : 159
 Quadro 2
-	numero total corpos : 0
+	numero total corpos : 1800
 Quadro 3
 	numero total corpos : 213
 Quadro 4
-	numero total corpos : 215
+	numero total corpos : 5498
 Quadro 5
 	numero total corpos : 99
 Quadro 6
-	numero total corpos : 40
+	numero total corpos : 6128
 Quadro 7
 	numero total corpos : 142
-	 Q0, tamanho da entrada : 132
-Q:0 	Entrada : 132 corpos
+	 Q0, tamanho da entrada : 10961
+Q:0 	Entrada : 10961 corpos
 LIMITES Segmento 0
 	 MAX 		 MIN 
-X:	 64.235901	 60.021149
-Y:	 89.962898	 73.864700
-Z:	 87.170799	 60.266819
+X:	 76.461136	 60.002155
+Y:	 89.998711	 60.009590
+Z:	 89.995049	 60.002613
 
-SEMICUBO 0 	 size grupos : 10
+SEMICUBO 0 	 size grupos : 1297
 ----------------------- IMPRIMINDO GRUPOS ------------------------
 
 Terminou loop 0 
@@ -55,8 +55,15 @@ SEMICUBO 1 	 size grupos : 74
 
 Terminou loop 1 
 
-	 Q2, tamanho da entrada : 0
-SEMICUBO 2 	 size grupos : 0
+	 Q2, tamanho da entrada : 1800
+Q:2 	Entrada : 1800 corpos
+LIMITES Segmento 2
+	 MAX 		 MIN 
+X:	 73.006050	 60.001240
+Y:	 119.897438	 90.000999
+Z:	 89.992989	 60.003529
+
+SEMICUBO 2 	 size grupos : 264
 ----------------------- IMPRIMINDO GRUPOS ------------------------
 
 Terminou loop 2 
@@ -74,15 +81,15 @@ SEMICUBO 3 	 size grupos : 48
 
 Terminou loop 3 
 
-	 Q4, tamanho da entrada : 215
-Q:4 	Entrada : 215 corpos
+	 Q4, tamanho da entrada : 5498
+Q:4 	Entrada : 5498 corpos
 LIMITES Segmento 4
 	 MAX 		 MIN 
-X:	 64.458344	 60.021034
-Y:	 88.984901	 60.348637
-Z:	 119.979820	 101.572746
+X:	 78.138954	 60.002384
+Y:	 89.993332	 60.001812
+Z:	 119.997444	 90.001915
 
-SEMICUBO 4 	 size grupos : 137
+SEMICUBO 4 	 size grupos : 1718
 ----------------------- IMPRIMINDO GRUPOS ------------------------
 
 Terminou loop 4 
@@ -100,15 +107,15 @@ SEMICUBO 5 	 size grupos : 68
 
 Terminou loop 5 
 
-	 Q6, tamanho da entrada : 40
-Q:6 	Entrada : 40 corpos
+	 Q6, tamanho da entrada : 6128
+Q:6 	Entrada : 6128 corpos
 LIMITES Segmento 6
 	 MAX 		 MIN 
-X:	 62.514599	 60.122761
-Y:	 97.463493	 90.005920
-Z:	 119.848236	 110.507561
+X:	 71.671623	 60.002728
+Y:	 119.978676	 90.005920
+Z:	 119.999847	 90.020569
 
-SEMICUBO 6 	 size grupos : 23
+SEMICUBO 6 	 size grupos : 904
 ----------------------- IMPRIMINDO GRUPOS ------------------------
 
 Terminou loop 6 
@@ -130,25 +137,27 @@ Terminou loop 7
 
 Verificando zonas de fronteira
 
- Root 0 tem 10 grupos
+ Root 0 tem 1297 grupos
 	 Fronteira de seg 0
-	 Numero de nos na fronteira: 112
+	 Numero de nos na fronteira: 2806
  Root 1 tem 74 grupos
 	 Fronteira de seg 1
 	 Numero de nos na fronteira: 72
- Root 2 tem 0 grupos
+ Root 2 tem 264 grupos
+	 Fronteira de seg 2
+	 Numero de nos na fronteira: 1018
  Root 3 tem 48 grupos
 	 Fronteira de seg 3
 	 Numero de nos na fronteira: 151
- Root 4 tem 137 grupos
+ Root 4 tem 1718 grupos
 	 Fronteira de seg 4
-	 Numero de nos na fronteira: 107
+	 Numero de nos na fronteira: 872
  Root 5 tem 68 grupos
 	 Fronteira de seg 5
 	 Numero de nos na fronteira: 40
- Root 6 tem 23 grupos
+ Root 6 tem 904 grupos
 	 Fronteira de seg 6
-	 Numero de nos na fronteira: 37
+	 Numero de nos na fronteira: 1145
  Root 7 tem 67 grupos
 	 Fronteira de seg 7
 	 Numero de nos na fronteira: 66
@@ -156,20 +165,25 @@ Verificando zonas de fronteira
 
 VERIFICANDO SEGMENTO 0
 	COMPARA COM SEGMENTO 1
-	COMPARA COM SEGMENTO 2	 size: Zero
+	COMPARA COM SEGMENTO 2
 	COMPARA COM SEGMENTO 3
 	COMPARA COM SEGMENTO 4
 	COMPARA COM SEGMENTO 5
 	COMPARA COM SEGMENTO 6
 	COMPARA COM SEGMENTO 7
 VERIFICANDO SEGMENTO 1
-	COMPARA COM SEGMENTO 2	 size: Zero
+	COMPARA COM SEGMENTO 2
 	COMPARA COM SEGMENTO 3
 	COMPARA COM SEGMENTO 4
 	COMPARA COM SEGMENTO 5
 	COMPARA COM SEGMENTO 6
 	COMPARA COM SEGMENTO 7
-PULOU SEGMENTO 2
+VERIFICANDO SEGMENTO 2
+	COMPARA COM SEGMENTO 3
+	COMPARA COM SEGMENTO 4
+	COMPARA COM SEGMENTO 5
+	COMPARA COM SEGMENTO 6
+	COMPARA COM SEGMENTO 7
 VERIFICANDO SEGMENTO 3
 	COMPARA COM SEGMENTO 4
 	COMPARA COM SEGMENTO 5
@@ -184,15 +198,15 @@ VERIFICANDO SEGMENTO 5
 	COMPARA COM SEGMENTO 7
 VERIFICANDO SEGMENTO 6
 	COMPARA COM SEGMENTO 7
-size tupla(Semelhanças) 3
+size tupla(Semelhanças) 42
  Limpa grupos vazios
-numero de grupos 392
-Tempo total :    6.53600 (ms)
+numero de grupos 3230
+Tempo total :    415.97100 (ms)
 
-numero de grupos 392
-Numero de grupos + 1 elemento: 95
-Tempo total :    6.74500 (ms)
+numero de grupos 3230
+Numero de grupos + 1 elemento: 1045
+Tempo total :    415.97400 (ms)
 
 FIM EXECUCAO
 
-0.392571
+2.513799

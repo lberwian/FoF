@@ -32,8 +32,6 @@ using namespace std;
 #include <string>
 
 #define debug false
-#define paralelo true
-#define original false
 
 
 int *igru, *iden, N;
@@ -414,14 +412,14 @@ void DivideEntrada() {
     float meioZ = min_z + ((max_z - min_z) / 2);
     printf("\nMX: %f\nMY: %f\nMZ: %f", meioX, meioY, meioZ);
     int quadro;
-#if paralelo==true
+#if paralelo==1
 
 //#pragma omp parallel for
     for (int contador = 0; contador < N; contador++) {
         quadro = 0;
         if (x[contador] > meioX) {
             quadro += 1;
-        }
+        }                                                   
         if (y[contador] > meioY) {
             quadro += 2;
         }
@@ -472,16 +470,18 @@ start = chrono::system_clock::now();
     printf("\nraio = %f", raio);
     
 #endif 
-#if original ==true
+#if original==1
     printf("\nOriginal Executando\n");
 #endif
-#if paralelo == true
+#if paralelo==1
     printf("\nOpenMP Executando\n");
 #endif
     //gettimeofday(&tempo_inicio, NULL);
 
-#if original == false
-    if (paralelo) {
+#if original==0
+
+#if paralelo==1 
+    	printf("asdasd");
         DivideEntrada();
         vector<string> logs[8];
         Segmento root[8];
@@ -731,8 +731,8 @@ start = chrono::system_clock::now();
         printf("\nTempo total :    %.5f (ms)\n", tempo);
         printf("\nnumero de grupos %d", grupos_total.size());
         printf("\nNumero de grupos + 1 elemento: %d", cont);
-
-    } else {//verificar p/ nao paralelo
+#endif
+#if paralelo==0 //verificar p/ nao paralelo
         printf("\n--------------------------------------------------");
         printf("\n\t\tSERIAL");
 
@@ -796,9 +796,9 @@ start = chrono::system_clock::now();
         printf("\nNumero de grupos + 1 elemento: %d", cont);
         //        printf("\nNumero de grupos exatamente 1 elemento: %d", cont2);
         //        printf("\nNumero de corpos nos grupos: %d", cont3);
-    }
 #endif
-#if original==true
+#endif
+#if original==1
     Friends();
 #endif
     gettimeofday(&tempo_fim, NULL);
@@ -811,9 +811,10 @@ start = chrono::system_clock::now();
     printf("\nTempo total :    %.5f (ms)\n", tempo);
     printf("\nFIM EXECUCAO\n\n");
     printf("%f", tempo_cro);
-#if original==true
+#if original==1
     LimpaMemoria();
 #endif
-   
+
+
     return 0;
 }

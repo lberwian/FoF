@@ -13,6 +13,7 @@ read -p "Número de execuções para o teste de desempenho " N
 read -p "Arquivo de entrada " arc 
 read -p "Raio " R
 read -p "Número de elementos " E
+read -p "Você deseja rodar os dois métodos, digite S ou s" met
 read -p "Para habilitar o método original digite S ou s: " original
 # read -p "Para escrever o arquivo com resultados digite S ou s, ou qualquer coisa para não: " save
 read -p "Para adicionar o cálculo do tempo internamente ao algoritmo FoF digite S ou s, ou qualquer coisa para não: " interno

@@ -13,21 +13,24 @@ read -p "Número de execuções para o teste de desempenho " N
 read -p "Arquivo de entrada " arc 
 read -p "Raio " R
 read -p "Número de elementos " E
-read -p "Para escrever o arquivo com resultados digite S ou s, ou qualquer coisa para não: " save
+read -p "Para habilitar o método original digite S ou s: " original
+# read -p "Para escrever o arquivo com resultados digite S ou s, ou qualquer coisa para não: " save
 read -p "Para adicionar o cálculo do tempo internamente ao algoritmo FoF digite S ou s, ou qualquer coisa para não: " interno
 
-#if [ "$save" != "S" ] && [ "$save" != "s" ]; then
-#	make
+#if [ "$original" != "S" ] && [ "$original" != "s" ]; then
+#	make -C ~/madalosso-friendsofriends-57f6b5f2911d/ main CXXFLAGS=-DRange=$E CCFLAGS=-DRaio=$R #CXXFLAGS1=-Doriginal=0 CXXFLAGS2=-Dparalelo=1 
+#	make -C ~/madalosso-friendsofriends-57f6b5f2911d/
 #	save="N"
 #	else
-#	make CXXFLAGS=-DSave
+#	make -C ~/madalosso-friendsofriends-57f6b5f2911d/ main CXXFLAGS=-DRange=$E CCFLAGS=-DRaio=$R #CXXFLAGS1=-Doriginal CXXFLAGS2=-Dparalelo=0 
+#	make -C ~/madalosso-friendsofriends-57f6b5f2911d/
 #fi
+make -C ~/madalosso-friendsofriends-57f6b5f2911d/ main CXXFLAGS=-DRange=$E CCFLAGS=-DRaio=$R
+make -C ~/madalosso-friendsofriends-57f6b5f2911d/
+if [ "$interno" != "S" ] && [ "$interno" != "s" ]; then
 
-
-#if [ "$interno" != "S" ] && [ "$interno" != "s" ]; then
-
-#	interno="N"
-#fi
+	interno="N"
+fi
 
 file="time.md"
 file1="time_ns.md"
@@ -43,7 +46,7 @@ do
 
 done
 
-echo "Arquivo: $arc / Raio = $R/ Nº elementos = $E / Execuções = $N / Escrita habilitado (S/N) = $save / T exec interno = $interno |" > $file
+echo "Arquivo: $arc / Raio = $R/ Nº elementos = $E / Execuções = $N / T exec interno = $interno |" > $file
 echo "-------------------------------------------------------------------------------------------------------------------------------" >> $file
 
 a=0
@@ -59,17 +62,19 @@ do
     dt=$(echo "$res2 - $res1" | bc)
     echo "$var1" >> $file2
 	echo "$dt" >> $file1
-	$prog "$var1" $file "in - " "t"
+	if [ "$interno" == "S" ] || [ "$interno" == "s" ]; then
+		$prog "$var1" $file "in - " "t"
+	fi
 	$prog "$dt" $file "$a - " "t"
 	a=$(($a+1))
 
 done
 
-#if [ "$interno" == "S" ] || [ "$interno" == "s" ]; then
+if [ "$interno" == "S" ] || [ "$interno" == "s" ]; then
 
-#	$prog "0" "$file" "i" "c" "$file2"
+	$prog "0" "$file" "i" "c" "$file2"
 
-#fi
+fi
 
 $prog "0" "$file" "0" "c" "$file1"
 
