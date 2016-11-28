@@ -13,18 +13,35 @@ read -p "Número de execuções para o teste de desempenho " N
 read -p "Arquivo de entrada " arc 
 read -p "Raio " R
 read -p "Número de elementos " E
-read -p "Para habilitar o método original digite S ou s: " original
-# read -p "Para escrever o arquivo com resultados digite S ou s, ou qualquer coisa para não: " save
+read -p "Para escrever o arquivo com resultados digite S ou s, ou qualquer coisa para não: " save
 read -p "Para adicionar o cálculo do tempo internamente ao algoritmo FoF digite S ou s, ou qualquer coisa para não: " interno
-
+read -p "Para habilitar o método original digite S ou s: " original
+if [ "$save" != "S" ] && [ "$save" != "s" ]; then
+	save1=0
+else
+	save1=1
+fi
+	
 if [ "$original" != "S" ] && [ "$original" != "s" ]; then
-	make -C ~/madalosso-friendsofriends-57f6b5f2911d/ main CXXFLAGS=-DRange=$E CCFLAGS=-DRaio=$R CXXFLAGS1=-Doriginal=0 CXXFLAGS2=-Dparalelo=1 
+	
+	make -C ~/madalosso-friendsofriends-57f6b5f2911d/ main CXXFLAGS=-DRange=$E CCFLAGS=-DRaio=$R CXXFLAGS1=-Doriginal=0 CXXFLAGS2=-Dparalelo=1 CXXFLAGS3=-Dthread=0 
 	make -C ~/madalosso-friendsofriends-57f6b5f2911d/
 	original="N"
-	paralelo="S"
+	paralelo="S"                                                                      
 	else
-	make -C ~/madalosso-friendsofriends-57f6b5f2911d/ main CXXFLAGS=-DRange=$E CCFLAGS=-DRaio=$R CXXFLAGS1=-Doriginal=1 CXXFLAGS2=-Dparalelo=0 
-	make -C ~/madalosso-friendsofriends-57f6b5f2911d/
+	read -p "Para habilitar o método original C/ PARARELISMO digite S ou s: " thread
+		if [ "$thread" != "S" ] && [ "$thread" != "s" ]; then
+			g++ -o FoF FoF02.cpp -std=c++11 -DRange=$E -DRaio=$R -DSave=$save1
+			myprog="$SCRIPTPATH/FoF"
+			#make -C ~/madalosso-friendsofriends-57f6b5f2911d/ main CXXFLAGS=-DRange=$E CCFLAGS=-DRaio=$R CXXFLAGS1=-Doriginal=1 CXXFLAGS2=-Dparalelo=0 CXXFLAGS3=-Dthread=0 
+			#make -C ~/madalosso-friendsofriends-57f6b5f2911d/ FUNCIONA, MAS USO DO CÓDIGO LIMPO ORIGINAL PARA MELHORES RESULTADOS.
+			
+		else
+			g++ -o FoF02 FoF02Parallel.cpp -fopenmp -std=c++11 -DRange=$E -DRaio=$R -DSave=$save1
+			myprog="$SCRIPTPATH/FoF02"
+			#make -C ~/madalosso-friendsofriends-57f6b5f2911d/ main CXXFLAGS=-DRange=$E CCFLAGS=-DRaio=$R CXXFLAGS1=-Doriginal=1 CXXFLAGS2=-Dparalelo=0 CXXFLAGS3=-Dthread=1 CXXFLAGS4=-fopenmp 
+			#make -C ~/madalosso-friendsofriends-57f6b5f2911d/ FUNCIONA, MAS COM DESEMPENHO PIOR.
+		fi
 	paralelo="N"
 fi
 #make -C ~/madalosso-friendsofriends-57f6b5f2911d/ main CXXFLAGS=-DRange=$E CCFLAGS=-DRaio=$R
@@ -48,8 +65,11 @@ do
 
 done
 
-echo "Arquivo: $arc / Raio = $R/ Nº elementos = $E / Execuções = $N / T exec interno = $interno / Metódo Original = $original|" > $file
-echo "-------------------------------------------------------------------------------------------------------------------------------" >> $file
+echo "# Arquivo: $arc / Raio = $R/ Nº elementos = $E / Execuções = $N / T exec interno = $interno / Metódo Original = $thread / Save = $save" > $file
+#echo "|------------------------------------------------------------------------------------------------------------------------------------------------------------------|" >> $file
+echo "| Interno | Externo |" >> $file
+echo "|---------| ------- |" >> $file
+
 
 a=0
 var="buffer.txt"
@@ -64,15 +84,19 @@ do
     res2=$(date +%s.%N)
     dt=$(echo "$res2 - $res1" | bc)
     echo "$var1" >> $file2
+    
 	echo "$dt" >> $file1
 	if [ "$interno" == "S" ] || [ "$interno" == "s" ]; then
-		$prog "$var1" $file "in - " "t"
+		$prog "$var1" $file "|" "t"
 	fi
 	$prog "$dt" $file "$a - " "t"
 	a=$(($a+1))
 
 done
-
+#echo "-----------------------------------------------------------------------------------" >> $file
+echo " " >> $file
+echo "|Médias|" >> $file
+echo "|------|" >> $file
 if [ "$interno" == "S" ] || [ "$interno" == "s" ]; then
 
 	$prog "0" "$file" "i" "c" "$file2"

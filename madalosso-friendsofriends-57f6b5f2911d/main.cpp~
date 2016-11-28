@@ -32,8 +32,6 @@ using namespace std;
 #include <string>
 
 #define debug false
-#define paralelo 1
-#define original 0
 
 
 int *igru, *iden, N;
@@ -480,8 +478,10 @@ start = chrono::system_clock::now();
 #endif
     //gettimeofday(&tempo_inicio, NULL);
 
-#if original==1
-    if (paralelo==1) {
+#if original==0
+
+#if paralelo==1 
+    	printf("asdasd");
         DivideEntrada();
         vector<string> logs[8];
         Segmento root[8];
@@ -731,8 +731,8 @@ start = chrono::system_clock::now();
         printf("\nTempo total :    %.5f (ms)\n", tempo);
         printf("\nnumero de grupos %d", grupos_total.size());
         printf("\nNumero de grupos + 1 elemento: %d", cont);
-
-    } else {//verificar p/ nao paralelo
+#endif
+#if paralelo==0 //verificar p/ nao paralelo
         printf("\n--------------------------------------------------");
         printf("\n\t\tSERIAL");
 
@@ -796,7 +796,7 @@ start = chrono::system_clock::now();
         printf("\nNumero de grupos + 1 elemento: %d", cont);
         //        printf("\nNumero de grupos exatamente 1 elemento: %d", cont2);
         //        printf("\nNumero de corpos nos grupos: %d", cont3);
-    }
+#endif
 #endif
 #if original==1
     Friends();
@@ -814,6 +814,7 @@ start = chrono::system_clock::now();
 #if original==1
     LimpaMemoria();
 #endif
-   
+
+
     return 0;
 }

@@ -120,7 +120,7 @@ help: .help-post
 # Add your post 'help' code here...
 
 main:	main.cpp No.cpp 
-	g++ -c main.cpp No.cpp -std=c++11 $(CXXFLAGS) $(CCFLAGS) $(CXXFLAGS1) $(CXXFLAGS2)
+	g++ -c main.cpp No.cpp -std=c++11 -fopenmp $(CXXFLAGS) $(CCFLAGS) $(CXXFLAGS1) $(CXXFLAGS2) $(CXXFLAGS3) $(CXXFLAGS4)
 	mv main.o ~/madalosso-friendsofriends-57f6b5f2911d/build/Debug/GNU-Linux-x86
 	mv No.o ~/madalosso-friendsofriends-57f6b5f2911d/build/Debug/GNU-Linux-x86
 

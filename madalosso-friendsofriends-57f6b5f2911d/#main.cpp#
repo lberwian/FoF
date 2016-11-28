@@ -741,12 +741,12 @@ start = chrono::system_clock::now();
         printf("\n tamanho: %d", tamanho);
 #endif
         gettimeofday(&tempo_fim, NULL);
-        tf = (double) tempo_fim.tv_usec + ((double) tempo_fim.tv_sec * (1000000.0));
+    /*    tf = (double) tempo_fim.tv_usec + ((double) tempo_fim.tv_sec * (1000000.0));
         ti = (double) tempo_inicio.tv_usec + ((double) tempo_inicio.tv_sec * (1000000.0));
         tempo = (tf - ti) / 1000;
         printf("\nTempo total :    %.5f (ms)\n", tempo);
         printf("\nnumero de grupos %d", grupos_total.size());
-        printf("\nNumero de grupos + 1 elemento: %d", cont);
+        printf("\nNumero de grupos + 1 elemento: %d", cont);*/
 #endif
 #if paralelo==0 //verificar p/ nao paralelo
         printf("\n--------------------------------------------------");
