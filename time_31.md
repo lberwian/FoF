@@ -1,14 +1,17 @@
-|              |          Grouping           ||
-| First Header | Second Header | Third Header |
-| ------------ | :-----------: | -----------: |
-| Content      |          *Long Cell*        ||
-| Content      |   **Cell**    |         Cell |
-
-| New section  |     More      |         Data |
-| And more     |            And more         ||
-[MultiMarkdown Table]
-
-
++-------+----------+------+
+| Table Headings   | Here |
++-------+----------+------+
+| Sub   | Headings | Too  |
++=======+==========+======+
+| cell  | column spanning |
++ spans +----------+------+
+| rows  | normal   | cell |
++-------+----------+------+
+| multi | * cells can be  |
+| line  | * formatted     |
+| cells | * paragraphs    |
+| too   |                 |
++-------+-----------------+
 
 ```<code>
 Arquitetura:           x86_64
