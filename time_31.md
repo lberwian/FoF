@@ -1,4 +1,5 @@
-** Arquivo: in / Raio = 1/ Nº elementos = 150 / Execuções = 5 / T exec interno = s / Metódo Original = s / Save = s **
+** Arquivo: in / Raio = 1/ Nº elementos = 150 / Execuções = 5 / T exec interno = s / Metódo Original = s / Save = s ** 
+
 | Interno | Externo |
 |---------| ------- |
 |Total Runtime: 0.047714 segundos |0 - Total Runtime: 0.049771 segundos |
