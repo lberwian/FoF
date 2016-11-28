@@ -1,4 +1,4 @@
-||Arquivo: in / Raio = 1/ Nº elementos = 120 / Execuções = 3 / T exec interno = s / Metódo Original = s / Save = s||
+
 |                                             Interno | Externo                                                    |
 |-----------------------------------------------------|------------------------------------------------------------|
 |Total Runtime: 0.013147 segundos                     |                      0 - Total Runtime: 0.0151845 segundos |
