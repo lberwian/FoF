@@ -5,12 +5,7 @@
 |Total Runtime: 0.047191 segundos |1 - Total Runtime: 0.0492163 segundos |
 |Total Runtime: 0.047436 segundos |2 - Total Runtime: 0.0494725 segundos |
 -----------------------------------------------------------------------------------
-|Menor/interna -Total Runtime: 0.013147 segundos |
-|Maior/interna - Total Runtime: 0.047436 segundos |
-|Média/interna - Total Runtime: 0.0359247 segundos |
-Menor - Total Runtime: 0.0151845 segundos |
-Maior - Total Runtime: 0.0494725 segundos |
-Média - Total Runtime: 0.0379578 segundos |
+
 ```<code>
 Arquitetura:           x86_64
 Modo(s) operacional da CPU:32-bit, 64-bit
