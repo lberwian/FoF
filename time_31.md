@@ -1,17 +1,12 @@
 **Arquivo: in / Raio = 1/ Nº elementos = 1500 / Execuções = 2 / T exec interno = s / Metódo Original = s / Save = s**
+ 
 | Interno | Externo |
 |---------| ------- |
-|0.044889 segundos |0 - 0.0472276 segundos |
-|0.071929 segundos |1 - 0.0741261 segundos |
- 
+|0.058809 segundos |0 - 0.0612268 segundos ||0.07396 segundos |1 - 0.0762679 segundos | 
 |Menor|Maior|Média|
 |------|------|------|
-|Interno -0.044889 segundos |
-|Interno - 0.071929 segundos |
-|Interno - 0.058409 segundos |
-|Externo - 0.0472276 segundos |
-|Externo - 0.0741261 segundos |
-|Externo - 0.0606769 segundos |
+|Interno -0.058809 segundos ||Interno - 0.07396 segundos ||Interno - 0.0663845 segundos |
+|Externo - 0.0612268 segundos ||Externo - 0.0762679 segundos ||Externo - 0.0687473 segundos |
 ```<code>
 Arquitetura:           x86_64
 Modo(s) operacional da CPU:32-bit, 64-bit
@@ -27,7 +22,7 @@ Família da CPU:       6
 Modelo:                60
 Model name:            Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz
 Step:                  3
-CPU MHz:               4281.093
+CPU MHz:               4215.156
 CPU max MHz:           4400,0000
 CPU min MHz:           800,0000
 BogoMIPS:              8000.10
