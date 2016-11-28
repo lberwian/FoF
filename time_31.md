@@ -3,6 +3,7 @@
 | Interno | Externo |
 |---------| ------- |
 |0.058809 segundos |0 - 0.0612268 segundos ||0.07396 segundos |1 - 0.0762679 segundos | 
+
 |Menor|Maior|Média|
 |------|------|------|
 |Interno -0.058809 segundos ||Interno - 0.07396 segundos ||Interno - 0.0663845 segundos |
