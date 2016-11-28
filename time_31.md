@@ -1,19 +1,20 @@
 # Arquivo: in / Raio = 1/ Nº elementos = 150 / Execuções = 5 / T exec interno = s / Metódo Original = s / Save = s
 | Interno | Externo |
 |---------| ------- |
-|Total Runtime: 0.038528 segundos |0 - Total Runtime: 0.0515723 segundos |
-|Total Runtime: 0.001503 segundos |1 - Total Runtime: 0.00348184 segundos |
-|Total Runtime: 0.069336 segundos |2 - Total Runtime: 0.0717036 segundos |
-|Total Runtime: 0.002207 segundos |3 - Total Runtime: 0.00552765 segundos |
-|Total Runtime: 0.127408 segundos |4 - Total Runtime: 0.12945 segundos |
------------------------------------------------------------------------------------
+|Total Runtime: 0.047714 segundos |0 - Total Runtime: 0.049771 segundos |
+|Total Runtime: 0.001432 segundos |1 - Total Runtime: 0.00311002 segundos |
+|Total Runtime: 0.013609 segundos |2 - Total Runtime: 0.0155818 segundos |
+|Total Runtime: 0.016713 segundos |3 - Total Runtime: 0.0189544 segundos |
+|Total Runtime: 0.01248 segundos |4 - Total Runtime: 0.0147215 segundos |
  
-|Menor/interna -Total Runtime: 0.001503 segundos |
-|Maior/interna - Total Runtime: 0.127408 segundos |
-|Média/interna - Total Runtime: 0.0477964 segundos |
-Menor - Total Runtime: 0.00348184 segundos |
-Maior - Total Runtime: 0.12945 segundos |
-Média - Total Runtime: 0.052347 segundos |
+|Médias|
+|------|
+|Menor/interna -Total Runtime: 0.001432 segundos |
+|Maior/interna - Total Runtime: 0.047714 segundos |
+|Média/interna - Total Runtime: 0.0183896 segundos |
+Menor - Total Runtime: 0.00311002 segundos |
+Maior - Total Runtime: 0.049771 segundos |
+Média - Total Runtime: 0.0204277 segundos |
 ```<code>
 Arquitetura:           x86_64
 Modo(s) operacional da CPU:32-bit, 64-bit
@@ -29,7 +30,7 @@ Família da CPU:       6
 Modelo:                60
 Model name:            Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz
 Step:                  3
-CPU MHz:               4207.031
+CPU MHz:               4201.875
 CPU max MHz:           4400,0000
 CPU min MHz:           800,0000
 BogoMIPS:              7999.95
