@@ -1,21 +1,17 @@
-**Arquivo: in / Raio = 1/ Nº elementos = 150 / Execuções = 5 / T exec interno = s / Metódo Original = s / Save = s** 
-
+**Arquivo: in / Raio = 1/ Nº elementos = 1500 / Execuções = 2 / T exec interno = s / Metódo Original = s / Save = s**
 | Interno | Externo |
 |---------| ------- |
-|Total Runtime: 0.047714 segundos |0 - Total Runtime: 0.049771 segundos |
-|Total Runtime: 0.001432 segundos |1 - Total Runtime: 0.00311002 segundos |
-|Total Runtime: 0.013609 segundos |2 - Total Runtime: 0.0155818 segundos |
-|Total Runtime: 0.016713 segundos |3 - Total Runtime: 0.0189544 segundos |
-|Total Runtime: 0.01248 segundos |4 - Total Runtime: 0.0147215 segundos |
+|0.044889 segundos |0 - 0.0472276 segundos |
+|0.071929 segundos |1 - 0.0741261 segundos |
  
-|Médias|
-|------|
-|Menor/interna -Total Runtime: 0.001432 segundos |
-|Maior/interna - Total Runtime: 0.047714 segundos |
-|Média/interna - Total Runtime: 0.0183896 segundos |
-Menor - Total Runtime: 0.00311002 segundos |
-Maior - Total Runtime: 0.049771 segundos |
-Média - Total Runtime: 0.0204277 segundos |
+|Menor|Maior|Média|
+|------|------|------|
+|Interno -0.044889 segundos |
+|Interno - 0.071929 segundos |
+|Interno - 0.058409 segundos |
+|Externo - 0.0472276 segundos |
+|Externo - 0.0741261 segundos |
+|Externo - 0.0606769 segundos |
 ```<code>
 Arquitetura:           x86_64
 Modo(s) operacional da CPU:32-bit, 64-bit
@@ -31,10 +27,10 @@ Família da CPU:       6
 Modelo:                60
 Model name:            Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz
 Step:                  3
-CPU MHz:               4201.875
+CPU MHz:               4281.093
 CPU max MHz:           4400,0000
 CPU min MHz:           800,0000
-BogoMIPS:              7999.95
+BogoMIPS:              8000.10
 Virtualização:       VT-x
 cache de L1d:          32K
 cache de L1i:          32K
