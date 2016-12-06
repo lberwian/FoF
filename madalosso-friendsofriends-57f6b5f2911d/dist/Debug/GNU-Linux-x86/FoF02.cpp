@@ -19,7 +19,7 @@ using namespace std;
 using namespace std::chrono;
 chrono::time_point<chrono::system_clock> start;
 chrono::time_point<chrono::system_clock> final;
-chrono::duration<double, ratio<1>> tempo_cro;
+chrono::duration<float, ratio<1>> tempo_cro;
 //---------------------------------------------------------------------------
 
 int  *igru, *iden, N;
@@ -186,10 +186,10 @@ float	rperc=Raio;
   
   delete Ngr;
   
-  }
+  
 #endif
   
-  
+  }
 //---------------------------------------------------------------------------
 /**************************** Limpa a memória ******************************/
 //---------------------------------------------------------------------------
