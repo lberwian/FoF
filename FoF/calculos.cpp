@@ -16,7 +16,11 @@ void tempo_(float tempo,std::ofstream &out,char *def){
 	int minutos = tempo/60;
 	float segundos = tempo-60*minutos;
 	
-	out << def << "Total Runtime: "<< dias << ":" << horas  << ":" << minutos  << ":"<< segundos  << "|"<< std::endl;
+	out << def << "Total Runtime: "<< dias << ":" << horas  << ":" << minutos  << ":"<< segundos  << "|";
+	
+	if(def!="in"){
+		out << endl;
+	}
 
 	return;
 }

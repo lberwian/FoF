@@ -1,7 +1,13 @@
 #!/bin/bash
 
-myprog=~/FoF/FoF/FoF
-prog=~/FoF/FoF/calc
+# Absolute path to this script, e.g. /home/user/bin/foo.sh
+SCRIPT=$(readlink -f "$0")
+# Absolute path this script is in, thus /home/user/bin
+SCRIPTPATH=$(dirname "$SCRIPT")
+
+echo $SCRIPTPATH
+myprog="$SCRIPTPATH/FoF"
+prog="$SCRIPTPATH/calc"
 
 echo "Por favor insira o número de execuções: "
 read -p "Número de execuções para o teste de desempenho " N 

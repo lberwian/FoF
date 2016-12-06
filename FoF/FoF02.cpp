@@ -140,7 +140,7 @@ void Friends(float rperc, int read)
   
  /// printf("Numero total de grupos: ");
  // printf("%d \n", k);
-
+/*
   /********* Calculando a quantidade de particulas por grupo ************/
   int nn, si, mult;
   int *Ngr; 
@@ -162,7 +162,7 @@ void Friends(float rperc, int read)
   //  printf("Grupos com massa maior que 1: %d \n", cont1);
   
   delete Ngr;
-  	 #endif
+  	*/
   }
  
 //---------------------------------------------------------------------------
