@@ -30,19 +30,26 @@ if [ "$original" != "S" ] && [ "$original" != "s" ]; then
 	paralelo="S"
 	else
 	read -p "Para habilitar o método original C/ PARARELISMO digite S ou s: " thread
+	read -p "Habilitar versão para definir o número de threads usado na parelização, digite S ou s: " threads
 		if [ "$thread" != "S" ] && [ "$thread" != "s" ]; then
 			g++ -o FoF FoF02.cpp -std=c++11 -DRange=$E -DRaio=$R -DSave=$save1
 			myprog="$SCRIPTPATH/FoF"
-			#make -C ~/madalosso-friendsofriends-57f6b5f2911d/ main CXXFLAGS=-DRange=$E CCFLAGS=-DRaio=$R CXXFLAGS1=-Doriginal=1 CXXFLAGS2=-Dparalelo=0 CXXFLAGS3=-Dthread=0
-			#make -C ~/madalosso-friendsofriends-57f6b5f2911d/ FUNCIONA, MAS USO DO CÓDIGO LIMPO ORIGINAL PARA MELHORES RESULTADOS.
-			#myprog="$SCRIPTPATH/friendsofriends"
+#make -C ~/madalosso-friendsofriends-57f6b5f2911d/ main CXXFLAGS=-DRange=$E CCFLAGS=-DRaio=$R CXXFLAGS1=-Doriginal=1 CXXFLAGS2=-Dparalelo=0 CXXFLAGS3=-Dthread=0
+#make -C ~/madalosso-friendsofriends-57f6b5f2911d/ FUNCIONA, MAS USO DO CÓDIGO LIMPO ORIGINAL PARA MELHORES RESULTADOS.
+#myprog="$SCRIPTPATH/friendsofriends"
 
 		else
-			g++ -o FoF02 FoF02Parallel.cpp -fopenmp -std=c++11 -DRange=$E -DRaio=$R -DSave=$save1
-			myprog="$SCRIPTPATH/FoF02"
-			#make -C ~/madalosso-friendsofriends-57f6b5f2911d/ main CXXFLAGS=-DRange=$E CCFLAGS=-DRaio=$R CXXFLAGS1=-Doriginal=1 CXXFLAGS2=-Dparalelo=0 CXXFLAGS3=-Dthread=1 CXXFLAGS4=-fopenmp
-			#make -C ~/madalosso-friendsofriends-57f6b5f2911d/ FUNCIONA, MAS COM DESEMPENHO PIOR.
-			#myprog="$SCRIPTPATH/friendsofriends"
+			if [ "$threads" != "S" ] && [ "$threads" != "s" ]; then
+				g++ -o FoF02 FoF02Parallel.cpp -fopenmp -std=c++11 -DRange=$E -DRaio=$R -DSave=$save1
+				myprog="$SCRIPTPATH/FoF02"
+			else
+				read -p "Quantas threads você deseja: " threads
+				make CFLAGS0=-DThread=$threads CFLAGS1=-DRange=$E CFLAGS2=-DRaio=$R
+				myprog="$SCRIPTPATH/FoF03"
+			fi
+#make -C ~/madalosso-friendsofriends-57f6b5f2911d/ main CXXFLAGS=-DRange=$E CCFLAGS=-DRaio=$R CXXFLAGS1=-Doriginal=1 CXXFLAGS2=-Dparalelo=0 CXXFLAGS3=-Dthread=1 CXXFLAGS4=-fopenmp
+#make -C ~/madalosso-friendsofriends-57f6b5f2911d/ FUNCIONA, MAS COM DESEMPENHO PIOR.
+#myprog="$SCRIPTPATH/friendsofriends"
 		fi
 	paralelo="N"
 fi
