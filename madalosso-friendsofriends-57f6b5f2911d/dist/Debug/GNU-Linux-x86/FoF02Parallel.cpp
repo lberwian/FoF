@@ -139,7 +139,7 @@ float	rperc=Raio;
 
 
 /********************escrevendo arquivo de saida ************************/
- #if Save==1
+
   char str1[10],str2[10];
 
   FILE *fp;
@@ -147,7 +147,7 @@ float	rperc=Raio;
   int num;
   char resultado;
   num = sprintf(str2, "%.2lf", rperc);
-
+#if Save==1
   strcpy(str1, "Grupos_RP");
   strcat(str1,str2);
 
@@ -160,7 +160,7 @@ float	rperc=Raio;
   v1[i], v2[i],v3[i]);
     //Printa: nº da coisinha, identificador, índice do grupo, posição x y z , velocidade Vx Vy Vz
   fclose (fp);
-
+#endif
   printf("Numero total de grupos: ");
   printf("%d \n", k);
 
@@ -187,7 +187,7 @@ float	rperc=Raio;
   delete Ngr;
 
 
-#endif
+
 
   }
 //---------------------------------------------------------------------------

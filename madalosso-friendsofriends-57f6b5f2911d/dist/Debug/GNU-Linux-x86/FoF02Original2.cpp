@@ -331,7 +331,7 @@ printf("TOTAL DE AGRUPAMENTOS: %d  \n",countR);
   int num;
   char resultado;
   num = sprintf(str2, "%.2lf", rperc);
-
+#if Save==1
   strcpy(str1, "Grupos_RP");
   strcat(str1,str2);
 
@@ -342,11 +342,14 @@ printf("TOTAL DE AGRUPAMENTOS: %d  \n",countR);
   for (i = 0 ; i < N ; i++)
   fprintf(fp,"%4d % 10d %4d % 10.6e % 10.6e % 10.6e % 10.6e % 10.6e % 10.6e \n", i,iden[i],igru[i],x[i], y[i],z[i],
   v1[i], v2[i],v3[i]);
+
     //Printa: nº da coisinha, identificador, índice do grupo, posição x y z , velocidade Vx Vy Vz
   fclose (fp);
-
+#endif
   printf("Numero total de grupos: ");
   k = 0;
+
+
   for(i=0;i<Nthreads;i++){
     k = k + grupos[i].size();
   }

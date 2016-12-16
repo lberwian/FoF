@@ -9,4 +9,4 @@ endif
 CC=g++
 
 program: FoF02Original2.cpp grupo.cpp grupo.h;
-	$(CC) FoF02Original2.cpp grupo.cpp -o FoF03 $(CFLAGS) $(CFLAGS0) $(CFLAGS1) $(CFLAGS2)
+	$(CC) FoF02Original2.cpp grupo.cpp -o FoF03 $(CFLAGS) $(CFLAGS0) $(CFLAGS1) $(CFLAGS2) $(CFLAGS3)

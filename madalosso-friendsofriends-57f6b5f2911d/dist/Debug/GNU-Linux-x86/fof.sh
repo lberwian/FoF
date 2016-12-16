@@ -44,7 +44,7 @@ if [ "$original" != "S" ] && [ "$original" != "s" ]; then
 				myprog="$SCRIPTPATH/FoF02"
 			else
 				read -p "Quantas threads você deseja: " threads
-				make CFLAGS0=-DThread=$threads CFLAGS1=-DRange=$E CFLAGS2=-DRaio=$R
+				make CFLAGS0=-DThread=$threads CFLAGS1=-DRange=$E CFLAGS2=-DRaio=$R CFLAGS3=-DSave=$save1
 				myprog="$SCRIPTPATH/FoF03"
 			fi
 #make -C ~/madalosso-friendsofriends-57f6b5f2911d/ main CXXFLAGS=-DRange=$E CCFLAGS=-DRaio=$R CXXFLAGS1=-Doriginal=1 CXXFLAGS2=-Dparalelo=0 CXXFLAGS3=-Dthread=1 CXXFLAGS4=-fopenmp
