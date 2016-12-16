@@ -1,10 +1,6 @@
 Iniciando...
-Raio de Percolação (em Mpc): 1.000000 
-TOTAL DE AGRUPAMENTOS: 0  
-Numero total de grupos: 700 
-Grupos com massa maior que 1: 232 
-Deleted 
-C 
-Limpando memória 
+
+ Entrada : 1500 dadosRaio de Percolação (em Mpc): 1.000000Numero total de grupos: 535 
+Grupos com massa maior que 1: 152 
  Terminou 
-0.010999
+0.018015

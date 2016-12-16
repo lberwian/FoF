@@ -30,7 +30,7 @@ if [ "$original" != "S" ] && [ "$original" != "s" ]; then
 	paralelo="S"
 	else
 	read -p "Para habilitar o método original C/ PARARELISMO digite S ou s: " thread
-	read -p "Habilitar versão para definir o número de threads usado na parelização, digite S ou s: " threads
+
 		if [ "$thread" != "S" ] && [ "$thread" != "s" ]; then
 			g++ -o FoF FoF02.cpp -std=c++11 -DRange=$E -DRaio=$R -DSave=$save1
 			myprog="$SCRIPTPATH/FoF"
@@ -39,6 +39,7 @@ if [ "$original" != "S" ] && [ "$original" != "s" ]; then
 #myprog="$SCRIPTPATH/friendsofriends"
 
 		else
+			read -p "Habilitar versão para definir o número de threads usado na parelização, digite S ou s: " threads
 			if [ "$threads" != "S" ] && [ "$threads" != "s" ]; then
 				g++ -o FoF02 FoF02Parallel.cpp -fopenmp -std=c++11 -DRange=$E -DRaio=$R -DSave=$save1
 				myprog="$SCRIPTPATH/FoF02"
