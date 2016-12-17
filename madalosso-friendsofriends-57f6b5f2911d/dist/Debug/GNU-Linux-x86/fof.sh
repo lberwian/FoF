@@ -34,6 +34,8 @@ if [ "$original" != "S" ] && [ "$original" != "s" ]; then
 		if [ "$thread" != "S" ] && [ "$thread" != "s" ]; then
 			g++ -o FoF FoF02.cpp -std=c++11 -DRange=$E -DRaio=$R -DSave=$save1
 			myprog="$SCRIPTPATH/FoF"
+			thread=0
+
 #make -C ~/madalosso-friendsofriends-57f6b5f2911d/ main CXXFLAGS=-DRange=$E CCFLAGS=-DRaio=$R CXXFLAGS1=-Doriginal=1 CXXFLAGS2=-Dparalelo=0 CXXFLAGS3=-Dthread=0
 #make -C ~/madalosso-friendsofriends-57f6b5f2911d/ FUNCIONA, MAS USO DO CÓDIGO LIMPO ORIGINAL PARA MELHORES RESULTADOS.
 #myprog="$SCRIPTPATH/friendsofriends"
@@ -42,9 +44,12 @@ if [ "$original" != "S" ] && [ "$original" != "s" ]; then
 			read -p "Habilitar versão para definir o número de threads usado na parelização, digite S ou s: " threads
 			if [ "$threads" != "S" ] && [ "$threads" != "s" ]; then
 				g++ -o FoF02 FoF02Parallel.cpp -fopenmp -std=c++11 -DRange=$E -DRaio=$R -DSave=$save1
+				threads=1
+				thread=1
 				myprog="$SCRIPTPATH/FoF02"
 			else
 				read -p "Quantas threads você deseja: " threads
+				thread=2
 				make CFLAGS0=-DThread=$threads CFLAGS1=-DRange=$E CFLAGS2=-DRaio=$R CFLAGS3=-DSave=$save1
 				myprog="$SCRIPTPATH/FoF03"
 			fi
@@ -75,7 +80,7 @@ do
 
 done
 
-echo "**Arquivo: $arc / Raio = $R/ Nº elementos = $E / Execuções = $N / T exec interno = $interno / Metódo Original = $thread / Save = $save**" > $file
+echo "**Arquivo: $arc / Raio = $R/ Nº elementos = $E / Execuções = $N / T exec interno = $interno / Metódo $thread / $threads threads / Save = $save**" > $file
 echo " " >> $file
 #echo "|------------------------------------------------------------------------------------------------------------------------------------------------------------------|" >> $file
 echo "| Interno | Externo |" >> $file
