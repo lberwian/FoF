@@ -1,6 +1,0 @@
-Iniciando...
-
- Entrada : 150 dadosRaio de Percolação (em Mpc): 1.000000Numero total de grupos: 88 
-Grupos com massa maior que 1: 22 
- Terminou 
-0.000739
