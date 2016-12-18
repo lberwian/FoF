@@ -41,14 +41,13 @@ if [ "$original" != "S" ] && [ "$original" != "s" ]; then
 #myprog="$SCRIPTPATH/friendsofriends"
 
 		else
-			read -p "Habilitar versão para definir o número de threads usado na parelização, digite S ou s: " threads
-			if [ "$threads" != "S" ] && [ "$threads" != "s" ]; then
-				g++ -o FoF02 FoF02Parallel.cpp -fopenmp -std=c++11 -DRange=$E -DRaio=$R -DSave=$save1
-				threads=1
+			read -p "Método 1 ou Método 2, digite S ou s:  " threads
+			read -p "Quantas threads você deseja: " threads
+			if [ "$threads" != "2" ] && [ "$threads" != "2" ]; then
+				g++ -o FoF02 FoF02Parallel.cpp -fopenmp -std=c++11 -DRange=$E -DRaio=$R -DSave=$save1 -DThread=$threads
 				thread=1
 				myprog="$SCRIPTPATH/FoF02"
 			else
-				read -p "Quantas threads você deseja: " threads
 				thread=2
 				make CFLAGS0=-DThread=$threads CFLAGS1=-DRange=$E CFLAGS2=-DRaio=$R CFLAGS3=-DSave=$save1
 				myprog="$SCRIPTPATH/FoF03"
@@ -121,3 +120,5 @@ fi
 $prog "0" "$file" "0" "c" 1 "$file1"
 
 lscpu >> $file
+
+cat $var >> $file

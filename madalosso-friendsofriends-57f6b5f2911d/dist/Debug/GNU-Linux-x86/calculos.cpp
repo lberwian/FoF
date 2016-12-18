@@ -16,7 +16,7 @@ void tempo_(float tempo,std::ofstream &out,char *def,int br_line){
 	int minutos = tempo/60;
 	float segundos = tempo-60*minutos;
 	*/
-	out<< def << tempo << " segundos "  << "|";
+	out<< def << tempo << "|";
 
 	if(br_line==1){
 	out << std::endl;

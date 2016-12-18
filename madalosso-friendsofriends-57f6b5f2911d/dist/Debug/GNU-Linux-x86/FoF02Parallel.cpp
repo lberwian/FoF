@@ -23,7 +23,7 @@ chrono::duration<double, ratio<1>> tempo_cro;*/
 high_resolution_clock::time_point final,start;
 //---------------------------------------------------------------------------
 
-int  *igru, *iden, N;
+int  *igru, *iden, N, Nthreads;
 float  *x, *y, *z, *v1, *v2, *v3;
 
 
@@ -99,11 +99,11 @@ float	rperc=Raio;
 //    printf("\nraio = %f", raio);
 
 #endif
-  printf ("Raio de Percolação (em Mpc): %f", rperc);
+  printf ("\nRaio de Percolação (em Mpc): %f", rperc);
 
  // #pragma omp parallel
  // {
-  setThreadNumber(0);
+  setThreadNumber(Nthreads);
 
   for (i = 0; i < N; i++)//Para cada linha do arquivo (Cada partícula/astro/coisinha)
   {
@@ -162,7 +162,7 @@ float	rperc=Raio;
     //Printa: nº da coisinha, identificador, índice do grupo, posição x y z , velocidade Vx Vy Vz
   fclose (fp);
 #endif
-  printf("Numero total de grupos: ");
+  printf("\nNumero total de grupos: ");
   printf("%d \n", k);
 
   /********* Calculando a quantidade de particulas por grupo ************/
@@ -220,8 +220,11 @@ main(int argc, char **argv)
     exit(1);
     }
 
-
-  puts ("Iniciando...");
+#if Thread>0
+      Nthreads=Thread;
+      //    printf("\nraio = %f", raio);
+#endif
+//  puts ("Iniciando...");
   Arg1 = argv[1];
   start = high_resolution_clock::now();
 
@@ -241,7 +244,7 @@ main(int argc, char **argv)
 ///
    //high_resolution_clock::time_point clearMemory = high_resolution_clock::now();
 
-  printf(" Terminou \n");
+  //printf(" Terminou \n");
   final = high_resolution_clock::now();
   typedef std::chrono::duration<float> float_seconds;
   auto tempo_crono = std::chrono::duration_cast<float_seconds>(final-start).count();

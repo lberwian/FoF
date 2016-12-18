@@ -41,7 +41,7 @@ bool LeDados(char *fn)
   FILE  *fp;
   fp = fopen(fn,"rt");
 
-  fscanf (fp, "%d", &N); ;//N = 318133 = nº de linhas no arquivo de entrada
+ fscanf (fp, "%d", &N); ;//N = 318133 = nº de linhas no arquivo de entrada
 #if Range>0
   	if(Range<=N)
   		N=Range;
@@ -236,7 +236,7 @@ void Friends()
   //    printf("\nraio = %f", raio);
 
 #endif
-  printf ("Raio de Percolação (em Mpc): %f \n", rperc);
+  printf ("\nRaio de Percolação (em Mpc): %f \n", rperc);
 
 
   vector<struct grupo*> grupos[Nthreads];
@@ -336,7 +336,8 @@ printf("TOTAL DE AGRUPAMENTOS: %d  \n",countR);
   strcpy(str1, "Grupos_RP");
   strcat(str1,str2);
 
-  fp = fopen(str1,"w");
+  fp = fopen(str1,"w");  //printf("Limpando memória \n");
+
 
   fprintf(fp, "%d %d \n", N, k); //Nº de coisinhas, maior índice de grupo?(k)
 
@@ -347,7 +348,7 @@ printf("TOTAL DE AGRUPAMENTOS: %d  \n",countR);
     //Printa: nº da coisinha, identificador, índice do grupo, posição x y z , velocidade Vx Vy Vz
   fclose (fp);
 #endif
-  printf("Numero total de grupos: ");
+  printf("\nNumero total de grupos: ");
   k = 0;
 
 
@@ -378,9 +379,9 @@ printf("TOTAL DE AGRUPAMENTOS: %d  \n",countR);
     printf("Grupos com massa maior que 1: %d \n", cont1);
 
   delete Ngr;
-printf("Deleted \n");
+//printf("Deleted \n");
 
-  printf("C \n");
+//  printf("C \n");
 
   }
 
@@ -389,7 +390,7 @@ printf("Deleted \n");
 //---------------------------------------------------------------------------
 void LimpaMemoria(void)
   {
-  printf("Limpando memória \n");
+  //printf("Limpando memória \n");
   delete iden;
   delete igru;
   delete x;
@@ -413,7 +414,7 @@ main(int argc, char **argv)
     getchar();
     exit(1);
     }
-  puts ("Iniciando...");
+  //puts ("Iniciando...");
 #if Thread>0
   Nthreads=Thread;
   //    printf("\nraio = %f", raio);
@@ -451,7 +452,7 @@ start = high_resolution_clock::now();
 ///auto f_secs = std::chrono::duration_cast<std::chrono::duration<float>>(dur);
   //high_resolution_clock::time_point clearMemory = high_resolution_clock::now();
 
-  printf(" Terminou \n");
+//  printf(" Terminou \n");
 
 ///
 /*  auto leitura = duration_cast<microseconds>( dataRead - start ).count();
