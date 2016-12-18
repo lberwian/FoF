@@ -1,6 +1,7 @@
 
- Entrada : 54 dados
-Raio de Percolação (em Mpc): 1.000000
-Numero total de grupos: 35 
-Grupos com massa maior que 1: 7 
-0.000380008
+Raio de Percolação (em Mpc): 1.000000 
+TOTAL DE AGRUPAMENTOS: 0  
+
+Numero total de grupos: 9869 
+Grupos com massa maior que 1: 3502 
+4.40498

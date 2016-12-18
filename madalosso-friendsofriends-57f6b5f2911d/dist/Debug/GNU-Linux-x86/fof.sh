@@ -41,14 +41,12 @@ if [ "$original" != "S" ] && [ "$original" != "s" ]; then
 #myprog="$SCRIPTPATH/friendsofriends"
 
 		else
-			read -p "Método 1 ou Método 2, digite S ou s:  " threads
+			read -p "Método 1 ou Método 2, digite 1 ou 2:  " thread
 			read -p "Quantas threads você deseja: " threads
-			if [ "$threads" != "2" ] && [ "$threads" != "2" ]; then
-				g++ -o FoF02 FoF02Parallel.cpp -fopenmp -std=c++11 -DRange=$E -DRaio=$R -DSave=$save1 -DThread=$threads
-				thread=1
+			if [ "$thread" != "2" ]; then
+				g++ -o FoF02 FoF02Parallel.cpp -fopenmp -std=gnu++11 -DRange=$E -DRaio=$R -DSave=$save1 -DThread=$threads
 				myprog="$SCRIPTPATH/FoF02"
 			else
-				thread=2
 				make CFLAGS0=-DThread=$threads CFLAGS1=-DRange=$E CFLAGS2=-DRaio=$R CFLAGS3=-DSave=$save1
 				myprog="$SCRIPTPATH/FoF03"
 			fi
