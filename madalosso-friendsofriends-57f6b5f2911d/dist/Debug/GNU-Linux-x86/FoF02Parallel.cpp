@@ -17,9 +17,10 @@ Autor: Renata S. Rocha Ruiz
 
 using namespace std;
 using namespace std::chrono;
-chrono::time_point<chrono::system_clock> start;
+/*chrono::time_point<chrono::system_clock> start;
 chrono::time_point<chrono::system_clock> final;
-chrono::duration<double, ratio<1>> tempo_cro;
+chrono::duration<double, ratio<1>> tempo_cro;*/
+high_resolution_clock::time_point final,start;
 //---------------------------------------------------------------------------
 
 int  *igru, *iden, N;
@@ -222,7 +223,7 @@ main(int argc, char **argv)
 
   puts ("Iniciando...");
   Arg1 = argv[1];
-  start = chrono::system_clock::now();
+  start = high_resolution_clock::now();
 
 //  float rperc = atof(argv[2]);
 ///
@@ -241,16 +242,15 @@ main(int argc, char **argv)
    //high_resolution_clock::time_point clearMemory = high_resolution_clock::now();
 
   printf(" Terminou \n");
-   final = std::chrono::system_clock::now();
-
-    tempo_cro = final-start;
-
-///
+  final = high_resolution_clock::now();
+  typedef std::chrono::duration<float> float_seconds;
+  auto tempo_crono = std::chrono::duration_cast<float_seconds>(final-start).count();
 //  auto leitura = duration_cast<microseconds>( dataRead - start ).count();
 //  auto friendsT = duration_cast<microseconds>( findFriends - dataRead ).count();
 //  auto cleanup = duration_cast<microseconds>( clearMemory - findFriends ).count();
  // cout << "Tempos em microsegundos. Leitura: " << leitura  << " Friends: " << friendsT << " Limpeza: " << cleanup;
-  printf("%f", tempo_cro);
+
+ cout << tempo_crono;
 
    /* #pragma omp parallel
     {

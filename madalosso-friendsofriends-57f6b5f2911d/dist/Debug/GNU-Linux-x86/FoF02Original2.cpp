@@ -20,12 +20,13 @@ Autor: Renata S. Rocha Ruiz
 using namespace std;
 using namespace std::chrono;
 //---------------------------------------------------------------------------
-chrono::time_point<chrono::system_clock> start;
+/*chrono::time_point<chrono::system_clock> start;
 chrono::time_point<chrono::system_clock> final;
-chrono::duration<double, ratio<1>> tempo_cro;
+chrono::duration<double, ratio<1>> tempo_cro;*/
 int  *igru, *iden, N, Nthreads,numGrupos;
 float  *x, *y, *z, *v1, *v2, *v3;
 float rperc;
+high_resolution_clock::time_point final,start;
 high_resolution_clock::time_point findFriends;
 high_resolution_clock::time_point postProccessTime;
 
@@ -419,8 +420,8 @@ main(int argc, char **argv)
 
 #endif
   Arg1 = argv[1];
-  start = chrono::system_clock::now();
-
+  //start = chrono::system_clock::now();
+start = high_resolution_clock::now();
 //  rperc = atof(argv[2]);
 //  Nthreads = atoi(argv[3]);
 
@@ -437,21 +438,27 @@ main(int argc, char **argv)
 //
 
   LimpaMemoria();
-  final = std::chrono::system_clock::now();
-  tempo_cro = final-start;
+  final = high_resolution_clock::now();
+  //final = std::chrono::system_clock::now();
+// tempo_cro = final-start;
+//  final = std::chrono::system_clock::now();
+//  auto i_millis = std::chrono::duration_cast<std::chrono::milliseconds>(final-start);
+  typedef std::chrono::duration<float> float_seconds;
+  auto tempo_crono = std::chrono::duration_cast<float_seconds>(final-start).count();
 
-///
+//tempo_cro = final-start;
+
+///auto f_secs = std::chrono::duration_cast<std::chrono::duration<float>>(dur);
   //high_resolution_clock::time_point clearMemory = high_resolution_clock::now();
 
   printf(" Terminou \n");
 
 ///
-  /*auto leitura = duration_cast<microseconds>( dataRead - start ).count();
+/*  auto leitura = duration_cast<microseconds>( dataRead - start ).count();
   auto friendsT = duration_cast<microseconds>( findFriends - dataRead ).count();
   auto postProccessing = duration_cast<microseconds>( postProccessTime - findFriends).count();
   auto cleanup = duration_cast<microseconds>( clearMemory - postProccessTime ).count();
   cout << "Tempos em microsegundos. Leitura: " << leitura  << " Friends: " << friendsT << " PosProcessamento" << postProccessing << " Limpeza: " << cleanup;*/
-  printf("%f", tempo_cro);
-
+  cout<<tempo_crono;
   return 0;
   }
